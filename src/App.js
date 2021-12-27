@@ -2,6 +2,7 @@ import React from "react";
 
 import Layout from "./components/layout";
 import Profile  from "./components/profile";
+import Repositories from "./components/repositories";
 import { ResetCSS } from "./global/resetCSS";
 
 const App = () => {
@@ -10,8 +11,7 @@ const App = () => {
       <ResetCSS/>
       <Layout>
         <Profile />
-        <div>Repositories</div>
-        <div>Starreds</div>
+        <Repositories />
       </Layout>
     </main>
   );
