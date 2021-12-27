@@ -12,6 +12,20 @@ export const WrappeInfoUser = styled.div`
     justify-content: space-between;
     height: 50vh;
     margin-left: 8px;
+    h1{
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    h3{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    h4{
+        font-size: 1.33em;
+        font-weight: bold;
+    }
 `;
 
 export const WrapperImage = styled.img`
@@ -34,5 +48,10 @@ export const WrapperUsername = styled.div`
     align-items: center;
     h3 {
         margin-right: 8px;
+    }
+    a{
+        font-size: 1.5em;
+        color: blue;
+        font-weight: bold;
     }
 `;
