@@ -1,12 +1,13 @@
 import React from "react";
 
 import Layout from "./components/layout";
+import Profile from "./components/profile";
 
-function App() {
+const App = () => {
   return (
     <main>
       <Layout>
-        <div>User</div>
+        <Profile />
         <div>Repositories</div>
         <div>Starreds</div>
       </Layout>
