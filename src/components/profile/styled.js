@@ -30,7 +30,7 @@ export const WrappeInfoUser = styled.div`
 
 export const WrapperImage = styled.img`
     border-radius: 50%;
-    width: 30vw;
+    width: 20vw;
     margin: 0.8em;
 `;
 
