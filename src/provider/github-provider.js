@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useState } from 'react';
 import api from '../services/api';
 
 export const GithubContext = createContext({
+    hasUser: false,
     loading: false,
     user: {},
     repositories: [],
@@ -29,9 +30,15 @@ const GithubProvider = ({ children }) => {
     });
 
     const getUser = ( username ) => {
+        setGithubState((prevState) => ({
+            ...prevState,
+            loading: !prevState.loading,
+        }));
+
         api.get(`users/${username}`).then(({ data }) => {
-            setGithubState(prevState => ({
-                ...prevState, 
+            setGithubState((prevState) => ({
+                ...prevState,
+                hasUser: true,
                 user: {
                     avatar: data.avatar_url,
                     login: data.login,
@@ -44,7 +51,13 @@ const GithubProvider = ({ children }) => {
                     following: data.following,
                     public_gists: data.public_gists,
                     public_repos: data.public_repos,
-                }}))
+                },
+            }));
+        }).finally(() => {
+            setGithubState((prevState) => ({
+                ...prevState,
+                loading: !prevState.loading,
+            }));
         })
     };
 
